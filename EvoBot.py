@@ -23,7 +23,7 @@ hlt.send_init("EvoBot")
 
 options = get_options()
 production_mult = float(options.production_mult)
-default_direction = [NORTH, EAST, SOUTH, WEST][int(options.default_direction)]
+default_direction = [NORTH, EAST, SOUTH, WEST][max(0,min(3,int(float(options.default_direction))))]
 
 def find_nearest_enemy_direction(square):
     direction = NORTH
